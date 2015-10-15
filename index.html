@@ -13,10 +13,46 @@
         <div data-role="page">
             <div class="ui-content">
                 <div class="img-holder">
-                    <img src="img/volcano.jpg" class="image">
-                <a href="#simplePopup" data-rel="popup" class="spot ui-btn ui-icon-alert ui-btn-icon-notext ui-corner-all" data-transition="pop">OMG THIS IS A BUDDON!</a>
-                    <div data-role="popup" id="simplePopup">
-                        <p>ASH CLOUD</p>
+                    <img src="img/volcano.jpg" class="image" width="500px">
+                    <div class="spot-holder">
+                        <a href="#ashcloud" 
+                           data-rel="popup" 
+                           class="spot ui-btn ui-btn-icon-notext ui-nodisc-icon ui-corner-all"
+                           data-transition="flip"
+                           style="top: 50px; left: 250px;"></a>
+                        <div data-role="popup" id="ashcloud">
+                            <p>ASH CLOUD</p>
+                        </div>
+                    </div>
+                    <div class="spot-holder">
+                        <a href="#mainpipe" 
+                           data-rel="popup" 
+                           class="spot ui-btn ui-nodisc-icon ui-btn-icon-notext ui-corner-all"
+                           data-transition="flip"
+                           style="top: 250px; left: 250px;"></a>
+                        <div data-role="popup" id="mainpipe">
+                            <p>MAIN PIPE</p>
+                        </div>
+                    </div>
+                    <div class="spot-holder">
+                        <a href="#sidepipe" 
+                           data-rel="popup" 
+                           class="spot ui-btn ui-nodisc-icon ui-btn-icon-notext ui-corner-all"
+                           data-transition="flip"
+                           style="top: 200px; left: 225px"></a>
+                        <div data-role="popup" id="sidepipe">
+                            <p>SIDE PIPE</p>
+                        </div>
+                    </div>
+                    <div class="spot-holder">
+                        <a href="#lavaflow" 
+                           data-rel="popup" 
+                           class="spot ui-btn ui-nodisc-icon ui-btn-icon-notext ui-corner-all"
+                           data-transition="flip"
+                           style="top: 150px; left: 225px"></a>
+                        <div data-role="popup" id="lavaflow">
+                            <p>LAVA FLOW</p>
+                        </div>
                     </div>
                 </div>
             </div>
