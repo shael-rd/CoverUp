@@ -1,0 +1,14 @@
+.spot {
+    position: absolute;
+    top: 100px;
+    left: 250px;
+}
+
+.image-holder {
+    display: inline-block;
+    position: relative;
+}
+
+.image {
+    position:absolute;
+}
