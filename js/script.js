@@ -4,10 +4,13 @@ $(document).on("pageinit", "#home", function() {
     addSpot(180, 210, "Side Vent");
     addSpot(120, 215, "Lava Flow");
     
-    $("a.spot").bind("click", function(event) {
-        $("#popup").text(event.target.getAttribute("popup-text"));
-        $("#popup").popup();
+    $(".image").bind("click", function(event) {
+        var posX = (event.pageX - $(this).offset().left - 15), posY = (event.pageY - $(this).offset().top - 15);
+        console.log("X: " + posX + ", Y: " + posY)
+        addSpot(posY, posX, "SOMETHING");
     });
+    
+    $("#popup").popup();
 })
 
 function addSpot(top, left, text) {
@@ -23,4 +26,9 @@ function addSpot(top, left, text) {
             })
         )
     );
+    
+    $(".spot").bind("click", function(event) {
+        $("#popup").text(event.target.getAttribute("popup-text"));
+        $("#popup").popup();
+    });
 }
