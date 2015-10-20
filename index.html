@@ -7,52 +7,17 @@
         <link rel="stylesheet" href="styles.css">
         <script src="js/jQueryMobile/jquery-1.11.3.min.js"></script>
         <script src="js/jQueryMobile/jquery.mobile-1.4.5.js"></script>
+        <script src="js/script.js"></script>
     </head>
     
     <body>
-        <div data-role="page">
+        <div data-role="page" id="home">
             <div class="ui-content">
                 <div class="img-holder">
                     <img src="img/volcano.jpg" class="image" width="500px">
-                    <div class="spot-holder">
-                        <a href="#ashcloud" 
-                           data-rel="popup" 
-                           class="spot ui-btn ui-nodisc-icon ui-btn-icon-notext ui-corner-all"
-                           data-transition="flip"
-                           style="top: 35px; left: 240px;"></a>
-                        <div data-role="popup" id="ashcloud">
-                            <p>Ash Cloud</p>
-                        </div>
-                    </div>
-                    <div class="spot-holder">
-                        <a href="#mainpipe" 
-                           data-rel="popup" 
-                           class="spot ui-btn ui-nodisc-icon ui-btn-icon-notext ui-corner-all"
-                           data-transition="flip"
-                           style="top: 250px; left: 232px;"></a>
-                        <div data-role="popup" id="mainpipe">
-                            <p>Main Pipe</p>
-                        </div>
-                    </div>
-                    <div class="spot-holder">
-                        <a href="#sidevent" 
-                           data-rel="popup" 
-                           class="spot ui-btn ui-nodisc-icon ui-btn-icon-notext ui-corner-all"
-                           data-transition="flip"
-                           style="top: 180px; left: 210px"></a>
-                        <div data-role="popup" id="sidevent">
-                            <p>Side Vent</p>
-                        </div>
-                    </div>
-                    <div class="spot-holder">
-                        <a href="#lavaflow" 
-                           data-rel="popup" 
-                           class="spot ui-btn ui-nodisc-icon ui-btn-icon-notext ui-corner-all"
-                           data-transition="flip"
-                           style="top: 120px; left: 215px"></a>
-                        <div data-role="popup" id="lavaflow">
-                            <p>Lava Flow</p>
-                        </div>
+                    
+                    <div data-rel="popup" id="popup">
+                        <p id="popup-text"></p>
                     </div>
                 </div>
             </div>
