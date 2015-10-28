@@ -12,13 +12,19 @@
     
     <body>
         <div data-role="page" id="home">
+            
+            <div data-role="popup" id="create-popup">
+                <input type="text" id="create-popup-text-input" data-inline="true">
+                <input class="ui-btn" data-theme="b" type="button" id="create-popup-submit-button" data-inline="true" value="SUBMIT">
+            </div>
+
+            <div data-role="popup" id="popup">
+                <p id="popup-text"></p>
+            </div>
+            
             <div class="ui-content">
                 <div class="img-holder">
                     <img src="img/volcano.jpg" class="image" width="500px">
-                    
-                    <div data-rel="popup" id="popup">
-                        <p id="popup-text"></p>
-                    </div>
                 </div>
             </div>
         </div>
