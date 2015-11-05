@@ -1,7 +1,7 @@
 var spotNo = 0;
 var tempSpot;
 
-$(document).on("pageinit", "#home", function() {
+$(document).on("pageinit", "#create", function() {
     addSpotText(35, 240, "Ash Cloud");
     addSpotText(250, 232, "Main Pipe");
     addSpotText(180, 210, "Side Vent");
