@@ -5,7 +5,7 @@ $(document).on("pagecreate", "#create", function() {
     
     $("img-holder").css("height", $(".image").height() + "px");
 
-    $(".image").on("tap", function(event) {
+    $(".image").on("click", function(event) {
         var posX = ((event.offsetX / $(document).width()) * 100), posY = ((event.offsetY / $(".img-holder").height()) * 100);
         console.log("imgholderheight " + $(".img-holder").height() + " Y " + posY);
         addSpot(posX, posY);
