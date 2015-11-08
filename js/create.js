@@ -29,7 +29,7 @@ function addSpotText(left, top, text) {
         )
     );
     
-    $("#spot-" + spotNo).on("click", function(event) {
+    $("#spot-" + spotNo).on("vclick", function(event) {
         $("#create-popup-text").text(event.target.getAttribute("popup-text"));
     });
     
