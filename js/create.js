@@ -1,10 +1,13 @@
 var spotNo = 0;
 
-$(document).on("pageshow", "#create", function() {
+$(document).on("pagecreate", "#create", function() {
+    console.log("CREATE LOADED!");
+    
     $("img-holder").css("height", $(".image").height() + "px");
 
     $(".image").on("click", function(event) {
-        var posX = ((event.offsetX / $(document).width()) * 100), posY = ((event.offsetY / $("img-holder").height()) * 100);
+        var posX = ((event.offsetX / $(document).width()) * 100), posY = ((event.offsetY / $(".img-holder").height()) * 100);
+        console.log("imgholderheight " + $(".img-holder").height() + " Y " + posY);
         addSpot(posX, posY);
     });
 })
