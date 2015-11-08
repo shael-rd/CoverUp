@@ -12,30 +12,6 @@ $(document).on("pagecreate", "#create", function() {
     });
 })
 
-function addSpotText(left, top, text) {
-    
-    $(".img-holder").append(
-        $("<div />", {"class" : "spot-holder",
-                      "style" : "top: " + top + "%; left: " + left + "%",
-                      "id" : "spot-" + spotNo + "-holder"}).append(
-            $("<a />", {
-                "href" : "#create-popup",
-                "data-rel" : "popup",
-                "class" : "spot ui-btn ui-nodisc-icon ui-btn-icon-notext ui-corner-all",
-                "data-transition" : "flip",
-                "id" : "spot-" + spotNo,
-                "popup-text" : text
-            })
-        )
-    );
-    
-    $("#spot-" + spotNo).on("click", function(event) {
-        $("#create-popup-text").text(event.target.getAttribute("popup-text"));
-    });
-    
-    spotNo++;
-}
-
 function addSpot(left, top) {
     var popupText;
     
@@ -47,7 +23,7 @@ function addSpot(left, top) {
         
         $("#create-text-popup").popup("close");
         
-        addSpotText(left, top, popupText);
+        addSpotText(left, top, popupText, false);
         $("#create-popup-submit-button").off("click");
     });
 }
