@@ -50,6 +50,7 @@ function addSpot(left, top) {
         $("#create-text-popup").popup("close");
         $("#spot-" + (spotNo - 1)).attr("popup-text", popupText)
 
+        $("#create-popup-text-input").val("");
         $("#create-popup-submit-button").off("click");
     });
 }
