@@ -41,13 +41,15 @@ function addSpot(left, top) {
     
     console.log("addSpot");
     
+    addSpotText(left, top, "");
+    
     $("#create-text-popup").popup("open");
     $("#create-popup-submit-button").on("click", function() {
         popupText = $("#create-popup-text-input").val();
         
         $("#create-text-popup").popup("close");
-        
-        addSpotText(left, top, popupText);
+        $("#spot-" + (spotNo - 1)).attr("popup-text", popupText)
+
         $("#create-popup-submit-button").off("click");
     });
 }
