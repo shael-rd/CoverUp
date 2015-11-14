@@ -12,6 +12,8 @@ $(document).on("pagecreate", "#create", function() {
     });
 })
 
+
+
 function addSpotText(left, top, text) {
     
     $(".img-holder").append(
