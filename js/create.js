@@ -21,6 +21,7 @@ if(!createDone) {
         console.log("addSpot");
 
         $("#create-text-popup").popup("open");
+        $("#create-popup-text-input").focus();
         $("#create-popup-submit-button").on("click", function() {
             popupText = $("#create-popup-text-input").val();
 
