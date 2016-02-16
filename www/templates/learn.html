@@ -1,0 +1,10 @@
+<ion-view view-title="Learn">
+    <ion-content class="content-positive">
+        <div class="img-holder">
+            <img class="image" ng-src="data:image/jpeg;base64,{{photo.imageData}}">
+            <div class="labels">
+                <button ng-repeat="label in labels" class="button button-icon icon ion-record label" ng-click="openPopover($event, $index)" ng-style="{left: (label.x+'%'), top: (label.y+'%')}"></button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

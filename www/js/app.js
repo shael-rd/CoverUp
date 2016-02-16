@@ -11,9 +11,9 @@ try {
 }
 function defineModule() {
   defined++;
-  console.log("defined" + defined);
+  console.log('defined' + defined);
   angular.module('starter', ['ionic'])
-  angular.module('starter').run(function($ionicPlatform, $rootScope) {
+  .run(function($ionicPlatform, $rootScope) {
     $ionicPlatform.ready(function() {
       if(window.cordova && window.cordova.plugins.Keyboard) {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -31,23 +31,43 @@ function defineModule() {
     });
     $rootScope.photo = null;
   })
+
+  .config(function($stateProvider, $urlRouterProvider) {
+    $stateProvider
+    .state('index', {
+      url: '/home',
+      templateUrl: 'templates/home.html'
+    })
+    .state('photo', {
+      url: '/photo',
+      templateUrl: 'templates/photo.html',
+      controller: 'photo-controller'
+    })
+    .state('learn', {
+      url: '/learn',
+      templateUrl: 'templates/learn.html',
+      controller: 'learn-controller'
+    })
+
+    $urlRouterProvider.otherwise('/home');
+  })
   
   // FACTORY: Labels
   // Contains information about labels on screen.
-  angular.module('starter').factory("Labels", [function() {
+  .factory('Labels', [function() {
     _labels = [
       {
         x: 50,
         y: 20,
-        label: "Ash Cloud"
+        label: 'Ash Cloud'
       }, {
         x: 25,
         y: 50,
-        label: "Lava Flow"
+        label: 'Lava Flow'
       }, {
         x: 50,
         y: 70,
-        label: "Main Pipe"
+        label: 'Main Pipe'
       }
     ];
 
@@ -62,7 +82,7 @@ function defineModule() {
   // FACTORY: Photo
   // Contains all of the functions for taking and saving photos.
   // Injects: $q
-  angular.module('starter').service('Photo', ['$q', function($q) {
+  .service('Photo', ['$q', function($q) {
     this.setImage = function(img) {
       this.image = img;
     };
@@ -95,19 +115,19 @@ function defineModule() {
 
       return q.promise;
     }
-  }]);
+  }])
 
   // CONTROLLER: learn-controller
   // Controls the learn page.
   // Injects: $scope, $rootScope, $ionicPopover, Photo, Labels
-  angular.module('starter').controller("learn-controller", ['$scope', '$rootScope', '$ionicPopover', 'Photo', 'Labels', function($scope, $rootScope, $ionicPopover, Photo, Labels) {
+  .controller('learn-controller', ['$scope', '$rootScope', '$ionicPopover', 'Photo', 'Labels', function($scope, $rootScope, $ionicPopover, Photo, Labels) {
     $scope.labels = Labels.labels;
     
     console.log($rootScope.photo)
     $scope.photo = $rootScope.photo;
     console.log($scope.photo);
 
-    $scope.curLabel = "";
+    $scope.curLabel = '';
 
 
     var template = '<ion-popover-view class="label-popover">' + '<h3 class="title">{{curLabel}}</h3>' + '</ion-popover-view>';
@@ -122,12 +142,12 @@ function defineModule() {
       $scope.curLabel = $scope.labels[index].label;
       $scope.popover.show($event);
     };
-  }]);
+  }])
 
   // CONTROLLER: photo-controller
   // Controls the photo page.
   // Injects: $scope, $rootScope, Photo 
-    angular.module('starter').controller('photo-controller', ['$scope', '$rootScope', 'Photo', function($scope, $rootScope, Photo) {
+  .controller('photo-controller', ['$scope', '$rootScope', 'Photo', function($scope, $rootScope, Photo) {
     $scope.photo = null;
     $scope.takePhoto = function() {
       var options = {
@@ -161,5 +181,5 @@ function defineModule() {
         }, null);
       }, null);
     }
-  }]);
+  }])
 }
